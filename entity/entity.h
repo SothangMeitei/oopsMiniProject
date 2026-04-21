@@ -26,6 +26,9 @@ class entity{
 
     public:
 
+        entity() = default;
+        entity(const std::string& name): m_name(name) {}
+
         void printStatus(){
             std::cout << "=== Entity Status ===" << std::endl;
             std::cout << "Name: " << m_name << std::endl;
@@ -41,7 +44,7 @@ class entity{
             m_item1 = m_items.at(indexOfNewItem);
         }
         void mutate_item2(int indexOfNewItem){
-            m_item1 = m_items.at(indexOfNewItem);
+            m_item2 = m_items.at(indexOfNewItem);
         }
 
         vec2 get_position(){
@@ -78,4 +81,6 @@ class entity{
 
         int getHealth() {return m_health;}
         bool isAlive(){return m_is_Alive;}
+
+        const std::string& getName() const {return m_name;}
 };

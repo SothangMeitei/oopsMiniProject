@@ -1,22 +1,41 @@
 #pragma once
-#include"entity.h"
-#include"../item/item.h"
+#include "entity.h"
+#include "../item/item.h"
+#include <string>
+#include <iostream>
 
-class player: public entity{
+class player : public entity {
     private:
         bool m_main_player;
         
     public:
-        bool getMainPlayerStatus(){return m_main_player;};
+        player(std::string name, int startingHealth) {
+            this->m_name = name;
+            this->m_health = startingHealth;
+            this->m_is_Alive = true;
+            this->m_level = 1;
+            this->m_damageMul = 1;
+            this->m_main_player = true; 
+        }
 
-        void useItem1(){
-            if(m_item1){
-                m_item1->use();
+        bool getMainPlayerStatus() const { return m_main_player; }
+
+        void useItemFromInventory(int inventoryIndex, entity* target) {
+            if (inventoryIndex >= 0 && inventoryIndex < m_items.size()) {
+                m_items[inventoryIndex]->use(this, target); 
+            } else {
+                std::cout << "Invalid item slot!\n";
             }
         }
-        void useItem2(){
-            if(m_item2){
-                m_item2->use();
+                
+        void printInventory() const {
+            std::cout << "--- Inventory ---\n";
+            if (m_items.empty()) {
+                std::cout << "(Empty)\n";
+                return;
+            }
+            for (size_t i = 0; i < m_items.size(); ++i) {
+                std::cout << i << ". Item Slot " << i << "\n"; 
             }
         }
 };

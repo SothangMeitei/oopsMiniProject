@@ -27,7 +27,9 @@ class item{
                 std::cerr<<"Creation of the input entity failed name is not matching\n";
             }
         }
+
+        virtual ~item() = 0;
         
-        virtual void use() = 0;
+        virtual void use(entity* user, entity* target) = 0;
         virtual void mutate() = 0;
 };

@@ -1,33 +1,19 @@
 #pragma once
+#include "item.h"
+#include "../entity/entity.h"
+#include <iostream>
 
-#include"item.h"
-#include"../entity/entity.h"
-
-class potion: public item{
+class potion : public item {
     private:
-        int m_ItemValue;
-
-        enum class typesOfPotions{
-            healing,
-            damageBuff
-        };
-
-        typesOfPotions potionType;
+        int m_healValue;
 
     public:
-        potion(std::string name , ): item(){}
-        void use() override {
-            switch(potionType){
-                case typesOfPotions::healing: {
-                    m_entityUsingItem->set_health(m_entityUsingItem->getHealth() - m_ItemValue);
-                    this->m_ItemValue = 0;
-                    break;
-                }
-                case typesOfPotions::damageBuff: {
-                    m_entityUsingItem->setDamageMul(m_entityUsingItem->getDamageMul() * m_ItemValue);
-                    this->m_ItemValue = 0;
-                    break;
-                }
-            }
+        potion(std::string name, int healValue) : item(name), m_healValue(healValue) {}
+
+        // Potions heal the user. They ignore the target parameter entirely.
+        void use(entity* user, entity* target) override {
+            user->set_health(user->getHealth() + m_healValue);
+            std::cout << user->getName() << " drinks healing potion" 
+                      << " and recovers " << m_healValue << " HP!\n";
         }
 };
