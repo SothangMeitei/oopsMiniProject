@@ -7,6 +7,7 @@
 #include "item/weapon.h"
 #include "item/potion.h"
 #include <limits>
+
 void clearScreen() {
     std::cout << "\x1B[2J\x1B[H";
 }
