@@ -24,3 +24,13 @@ In this project we hope to demostrate the core concepts of
     3) Encapsulation
         here in the program all the calsses have getters and setters and the internal member variables are hidden form the user
         thus demostarting the idea of Encapsulation
+    
+    4) Abstraction
+        Abstraction is demonstrated by reducing complex underlying combat mathematics into simple interfaces.
+        For example, when a weapon is used, the main loop does not calculate the damage multipliers or health reductions.
+        It simply calls item->use(this, target),and the complexity of the stat calculation is abstracted away
+        behind that single method call.
+
+    5) Aggregation
+        BattleManager class demonstrates Aggregation.
+        A BattleManager is not an entity, but it has a collection of entities (std::vector<std::shared_ptr<entity>> enemies)
