@@ -1,7 +1,7 @@
 #pragma once
 #include<iostream>
 #include<string>
-#include"vector.h"
+#include"../vec2.h"
 #include<vector>
 #include<memory>
 
@@ -81,6 +81,7 @@ class entity{
 
         int getHealth() {return m_health;}
         bool isAlive(){return m_is_Alive;}
+        void set_isAlive(bool input){m_is_Alive = input;}
 
         const std::string& getName() const {return m_name;}
 };

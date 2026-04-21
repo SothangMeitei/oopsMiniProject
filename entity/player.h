@@ -22,7 +22,7 @@ class player : public entity {
 
         void useItemFromInventory(int inventoryIndex, entity* target) {
             if (inventoryIndex >= 0 && inventoryIndex < m_items.size()) {
-                m_items[inventoryIndex]->use(this, target); 
+                m_items[inventoryIndex]->use(this, target);
             } else {
                 std::cout << "Invalid item slot!\n";
             }
@@ -35,7 +35,7 @@ class player : public entity {
                 return;
             }
             for (size_t i = 0; i < m_items.size(); ++i) {
-                std::cout << i << ". Item Slot " << i << "\n"; 
+                std::cout << i << ". Item Slot " << m_items[i]->getName() << "\n"; 
             }
         }
 };

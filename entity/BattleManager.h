@@ -25,7 +25,7 @@ class BattleManager {
         void clearDeadEnemies() {
             std::erase_if(enemies, [](const std::shared_ptr<entity>& e) {
                 if (!e->isAlive()) {
-                    std::cout << e->getEntityID() << " has been defeated!\n";
+                    std::cout << e->getName() << " has been defeated!\n";
                     return true; 
                 }
                 return false;

@@ -17,5 +17,9 @@ class weapon : public item {
             
             std::cout << user->getName() << " attacks " << target->getName() 
                        << " for " << totalDamage << " damage!\n";
+                       
+            if(target->getHealth() <= 0){
+                target->set_isAlive(false);
+            }
         }
 };

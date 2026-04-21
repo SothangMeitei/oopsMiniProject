@@ -4,12 +4,36 @@
 #include "entity/player.h"
 #include "entity/enemy.h"
 #include "entity/BattleManager.h"
+#include "item/weapon.h"
+#include "item/potion.h"
+#include <limits>
+void clearScreen() {
+    std::cout << "\x1B[2J\x1B[H";
+}
+
+// Pauses the game loop so the player can read what just happened
+void waitForNextTurn() {
+    std::cout << "\n[Press ENTER to continue...]";
+    
+    std::cin.clear();
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    
+    std::cin.get(); 
+}
 
 int main() {
     BattleManager manager;
 
     //Create the Player
     auto myPlayer = std::make_shared<player>("Sothang The Main Hero", 100);
+    
+    auto steelSword = std::make_shared<weapon>("Steel Sword", 20); // 20 damage
+    auto healthPotion = std::make_shared<potion>("Health Potion", 50); // 50 heal
+
+    
+    myPlayer->addItem(steelSword);
+    myPlayer->addItem(healthPotion);
+
     manager.setPlayer(myPlayer);
 
     //Create and place enemies into the "Arena"
@@ -19,7 +43,11 @@ int main() {
     manager.addEnemy(goblin1);
     manager.addEnemy(goblin2);
 
+    clearScreen();
     std::cout << "=== BATTLE START ===\n";
+    std::cout << "You have been ambushed by goblins!\n";
+    waitForNextTurn();
+    clearScreen();
 
     while (!manager.isBattleOver()) {
         
@@ -33,16 +61,29 @@ int main() {
                     << " (HP: " << activeEnemies[i]->getHealth() << ")\n";
         }
 
-        std::cout << "\nChoose an item form the inventory to be used input -1 to skip move\n";
-        int inventoryChoice;
-        std::cin >> inventoryChoice;
+        // Inside your main battle loop...
 
-        if (inventoryChoice != -1) {
-            std::cout << "Which enemy do you want to attack? (Enter number): ";
+        std::cout << "\nChoose an action:\nUse Item : press any integer to use item form inventory\n Skip current move: press -1 to skip current move\n";
+        int actionChoice;
+        std::cin >> actionChoice;
+
+        if (actionChoice != -1) {
+            myPlayer->printInventory();
+            std::cout << "Which item? (Enter slot number): ";
+            int itemIndex;
+            std::cin >> itemIndex;
+
+            std::cout << "Which enemy do you want to target? (Enter number): ";
+
             int targetIndex;
             std::cin >> targetIndex;
+
+            // Fetch the target from the Manager
+            auto& activeEnemies = manager.getEnemies();
             
-            
+            if (targetIndex >= 0 && targetIndex < activeEnemies.size()) {
+                myPlayer->useItemFromInventory(itemIndex, activeEnemies[targetIndex].get());
+            }
         } 
 
         manager.clearDeadEnemies();
@@ -55,9 +96,17 @@ int main() {
             //every surviving enemy attacks the player
             std::cout << e->getName() << " attacks you for 5 damage!\n";
             myPlayer->set_health(myPlayer->getHealth() - 5);
+            if(myPlayer->getHealth() <= 0){
+                myPlayer->set_isAlive(false);
+            }
         }
+
+        waitForNextTurn(); 
+        clearScreen();
     }
 
+    clearScreen();
+    std::cout << "=== BATTLE FINISHED ===\n\n";
     if (myPlayer->isAlive()) {
         std::cout << "\nVICTORY! You defeated all enemies.\n";
     } else {

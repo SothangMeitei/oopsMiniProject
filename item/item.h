@@ -7,29 +7,15 @@ class entity;
 //pure abstract class
 class item{
     protected:
-        enum class type{
-            weapon,
-            potion,
-            shield
-        };
-
-        std::string m_type;
-        type m_typeID;
+        std::string m_name;
         entity* m_entityUsingItem;
 
     public:
-        item(std::string type): m_type{type}  {
-            if (type == "weapon") m_typeID = item::type::weapon;
-            else if (type == "potion") m_typeID = item::type::potion;
-            else if (type == "shield") m_typeID = item::type::shield;
+        item(const std::string& name): m_name{name}  {}
 
-            else{
-                std::cerr<<"Creation of the input entity failed name is not matching\n";
-            }
-        }
-
-        virtual ~item() = 0;
+        virtual ~item() = default;
         
         virtual void use(entity* user, entity* target) = 0;
-        virtual void mutate() = 0;
+
+        const std::string& getName() const {return m_name;}
 };
