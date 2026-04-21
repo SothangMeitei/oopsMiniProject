@@ -1,7 +1,7 @@
 #pragma once
 #include<iostream>
 #include<string>
-#include<vector.h>
+#include"vector.h"
 #include<vector>
 #include<memory>
 
@@ -10,8 +10,10 @@ class item;
 class entity{
     protected:
         std::string m_name;
+        long long entityID;
         int m_health;
         int m_level;
+        int m_damageMul;
         bool m_is_Alive;
         vec2 m_position{};
         vec2 m_velocity{};
@@ -32,10 +34,9 @@ class entity{
             std::cout << "Is Alive: " << (m_is_Alive ? "Yes" : "No") << std::endl;
             std::cout << "Position: " <<m_position<<std::endl;
         }
-        void addItem(item* newItem){
-            m_items.emplace_back(newItem);
+        void addItem(std::shared_ptr<item> newItem){
+            m_items.push_back(std::move(newItem)); // std::move avoids a copy overhead
         }
-
         void mutate_item1(int indexOfNewItem){
             m_item1 = m_items.at(indexOfNewItem);
         }
@@ -66,5 +67,15 @@ class entity{
             m_health = newHealth;
         }
 
+        int getDamageMul(){return m_damageMul;}
+        void setDamageMul(int newValue){
+            this->m_damageMul = newValue;
+        }
+
+        long long getEntityID(){
+            return entityID;
+        }
+
         int getHealth() {return m_health;}
+        bool isAlive(){return m_is_Alive;}
 };
