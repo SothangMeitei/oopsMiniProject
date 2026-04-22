@@ -54,7 +54,7 @@ int main() {
     BattleManager manager;
 
     //Create the Player
-    auto myPlayer = std::make_shared<player>("Sothang The Main Hero", 100);
+    auto myPlayer = std::make_shared<player>("You(The main player)", 100);
     
     auto steelSword = std::make_shared<weapon>("Steel Sword", 20); // 20 damage
     auto healthPotion = std::make_shared<potion>("Health Potion", 50); // 50 heal
