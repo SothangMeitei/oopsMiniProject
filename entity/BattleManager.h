@@ -22,7 +22,7 @@ class BattleManager {
             enemies.push_back(std::move(newEnemy));
         }
 
-        void clearDeadEnemies() {
+        void clearDeadEnemies() {            
             std::erase_if(enemies, [](const std::shared_ptr<entity>& e) {
                 if (!e->isAlive()) {
                     std::cout << e->getName() << " has been defeated!\n";

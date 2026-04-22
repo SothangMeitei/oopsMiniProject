@@ -14,7 +14,7 @@ class player : public entity {
             this->m_health = startingHealth;
             this->m_is_Alive = true;
             this->m_level = 1;
-            this->m_damageMul = 1;
+            this->m_damage = 1;
             this->m_main_player = true; 
         }
 

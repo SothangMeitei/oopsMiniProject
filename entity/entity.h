@@ -6,14 +6,13 @@
 #include<memory>
 
 class item;
-
 class entity{
     protected:
         std::string m_name;
         long long entityID;
         int m_health;
         int m_level;
-        int m_damageMul;
+        int m_damage;
         bool m_is_Alive;
         vec2 m_position{};
         vec2 m_velocity{};
@@ -67,12 +66,13 @@ class entity{
         }
 
         void set_health(int newHealth){
+            
             m_health = newHealth;
         }
 
-        int getDamageMul(){return m_damageMul;}
+        int getDamage(){return m_damage;}
         void setDamageMul(int newValue){
-            this->m_damageMul = newValue;
+            this->m_damage = newValue;
         }
 
         long long getEntityID(){

@@ -1,10 +1,9 @@
 #pragma once
-#include"entity.h"
-
-#pragma once
-#include "entity.h"
-#include <string>
 #include <iostream>
+#include"entity.h"
+#include <string>
+#include <thread>
+#include <chrono>
 
 class enemy : public entity {
 private:
@@ -15,20 +14,15 @@ public:
         this->m_health = startingHealth;
         this->m_is_Alive = true;
         this->m_level = 1;
-        this->m_damageMul = 1;
+        this->m_damage = 5;
         this->m_xpReward = xpReward;
-    }
-
-    int calculateAttackDamage() const {
-        int baseDamage = 5;
-        return baseDamage * m_damageMul; 
     }
 
     int getXPReward() const {
         return m_xpReward;
     }
 
-    std::string getName() const {
+    const std::string& getName() const {
         return m_name;
     }
     void printStatus() const {

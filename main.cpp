@@ -8,18 +8,46 @@
 #include "item/potion.h"
 #include <limits>
 
-void clearScreen() {
+inline void clearScreen() {
     std::cout << "\x1B[2J\x1B[H";
 }
 
 // Pauses the game loop so the player can read what just happened
-void waitForNextTurn() {
+inline void waitForNextTurn() {
     std::cout << "\n[Press ENTER to continue...]";
     
     std::cin.clear();
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     
     std::cin.get(); 
+}
+
+inline void goblin_attack_animation() {
+    int startDistance = 40;  
+    
+    for (int i = startDistance; i > 0; i -= 2) {   
+        std::cout << "\x1B[2J\x1B[H";
+        std::string gap(i, ' ');
+        
+        std::cout << gap << "   /-_-\\  \n";
+        std::cout << gap << "  ( o o )--/ \n";
+        std::cout << gap << "   > m <     \n";
+        std::cout << gap << "  /  |  \\   \n";
+        std::cout << gap << "    / \\     \n";
+        
+        std::cout << std::flush;
+        std::this_thread::sleep_for(std::chrono::milliseconds(20)); 
+    }
+    
+    std::cout << "\x1B[2J\x1B[H";
+    std::cout << "   /-_-\\  \n";
+    std::cout << "  ( > < )    *** THWACK! *** \n";
+    std::cout << "   > m <     \n";
+    std::cout << "  /  |--/   \n";
+    std::cout << "    / \\     \n";
+    
+    std::cout << std::flush;
+    std::this_thread::sleep_for(std::chrono::milliseconds(500));
 }
 
 int main() {
@@ -62,9 +90,7 @@ int main() {
                     << " (HP: " << activeEnemies[i]->getHealth() << ")\n";
         }
 
-        // Inside your main battle loop...
-
-        std::cout << "\nChoose an action:\nUse Item : press any integer to use item form inventory\n Skip current move: press -1 to skip current move\n";
+        std::cout << "\nChoose an action:\na)Use Item : press any integer to use item form inventory\nb)Skip current move: press -1 to skip current move\n";
         int actionChoice;
         std::cin >> actionChoice;
 
@@ -88,23 +114,33 @@ int main() {
         } 
 
         manager.clearDeadEnemies();
+        waitForNextTurn();
 
+        // ... (Player turn finishes) ...
+        
         if (manager.isBattleOver()) break; 
 
-        //move of the enemy
-        std::cout << "\n--- Enemy Turn ---\n";
+        // === ENEMY TURN ===
+        // We don't need a "Enemy Turn" text print here because the animation 
+        // instantly clears the screen anyway!
+
         for (auto& e : manager.getEnemies()) {
-            //every surviving enemy attacks the player
-            std::cout << e->getName() << " attacks you for 5 damage!\n";
-            myPlayer->set_health(myPlayer->getHealth() - 5);
+            
+            goblin_attack_animation(); 
+            
+            int damage = e->getDamage(); 
+            
+            std::cout << "\n" << e->getName() << " attacks you for " << damage << " damage!\n";
+            myPlayer->set_health(myPlayer->getHealth() - damage);
+            
             if(myPlayer->getHealth() <= 0){
                 myPlayer->set_isAlive(false);
             }
+            waitForNextTurn(); 
         }
-
-        waitForNextTurn(); 
         clearScreen();
     }
+    
 
     clearScreen();
     std::cout << "=== BATTLE FINISHED ===\n\n";
@@ -114,5 +150,6 @@ int main() {
         std::cout << "\nGAME OVER. You were defeated.\n";
     }
 
+    waitForNextTurn();
     return 0;
 }
