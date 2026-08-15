@@ -1,0 +1,3 @@
+C:/oopsMiniProject/build/CMakeFiles/oopsMiniProject.dir
+C:/oopsMiniProject/build/CMakeFiles/ALL_BUILD.dir
+C:/oopsMiniProject/build/CMakeFiles/ZERO_CHECK.dir

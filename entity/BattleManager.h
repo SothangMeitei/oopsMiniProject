@@ -12,7 +12,6 @@ class BattleManager {
     private:
         std::shared_ptr<player> mainPlayer;
         std::vector<std::shared_ptr<entity>> enemies;
-
     public:
         void setPlayer(std::shared_ptr<player> p) {
             mainPlayer = std::move(p);

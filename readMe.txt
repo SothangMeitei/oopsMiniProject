@@ -8,7 +8,7 @@ In this project we hope to demostrate the core concepts of
 
     1)Inheritance is demonstrated 
         in the part where 
-            the enemy and the player class inherit form the class entity so
+            the enemy and the player class inherit from the class entity so
             enemy is an entity and player is an entity
         
             item is inherited by the classes potion and the class weapon
@@ -30,6 +30,8 @@ In this project we hope to demostrate the core concepts of
         For example, when a weapon is used, the main loop does not calculate the damage multipliers or health reductions.
         It simply calls item->use(this, target),and the complexity of the stat calculation is abstracted away
         behind that single method call.
+        The complexity of the item class use function is hidden form the user just by seeing from the class of the item
+        so this item class is an Abstract class , with the pure virtual function use() 
 
     5) Aggregation
         BattleManager class demonstrates Aggregation.
