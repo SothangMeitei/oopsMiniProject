@@ -17,11 +17,16 @@ private:
 public:
     GameApp() : window(sf::VideoMode({1280, 720}), "OOP Game") {
         window.setFramerateLimit(60);
+        
+        // 1. Initialize the ImGui-SFML bridge
         (void)ImGui::SFML::Init(window);
         
-        // Ensure MainMenuScene is fully defined in scene/menu.h 
-        // and publicly inherits from Scene
-        currentScene = std::make_unique<MainMenuScene>(this);
+        // 2. --- FIX FOR IMGUI 1.92.0+ FONT BUG ---
+        // Manually push the default font into the atlas
+        ImGui::GetIO().Fonts->AddFontDefault();
+        
+        // 3. Initialize your starting scene
+        currentScene = std::make_unique<MainMenuScene>(this); 
     }
 
     ~GameApp() {
