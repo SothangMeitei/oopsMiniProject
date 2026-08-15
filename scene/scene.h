@@ -7,7 +7,7 @@ class GameApp;
 class Scene {
 protected:
     // Protected so derived scenes (MainMenu, GamePlay) can access it
-    GameApp* app; 
+    GameApp* app;
 
 public:
     // Force all scenes to take the GameApp pointer upon creation

@@ -1,14 +1,12 @@
 #pragma once
 #include "scene.h"
-#include "../entity/BattleManager.h"
 
-class GamePlayScene : public Scene{
-    private:
-        BattleManager manager;
+class GameApp;
+
+class GeometryScene: public Scene{
     public:
-        GamePlayScene(GameApp* gameApp);
-        ~GamePlayScene() = default;
-
+        GeometryScene(GameApp*);
+        ~GeometryScene() = default;
         void handleEvent(const sf::Event& event, sf::RenderWindow& window) override;
         void update(float dt) override;
         void render(sf::RenderWindow& window) override;

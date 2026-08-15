@@ -1,6 +1,10 @@
 cmake_minimum_required(VERSION 3.15)
 project(oopsMiniProject)
 
+# Add these two lines to force C++20
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
 # Find the packages vcpkg installed (Note the capitalized components)
 find_package(SFML COMPONENTS Graphics Window System REQUIRED)
 find_package(ImGui-SFML CONFIG REQUIRED)
@@ -12,6 +16,14 @@ add_executable(${PROJECT_NAME}
     scene/gamePlay.cpp
     scene/menu.cpp
     scene/scene.h
+    scene/geometry.cpp
+    scene/geometry.h
+    scene/pong.h
+    scene/pong.cpp
+    scene/chess.h
+    scene/chess.cpp
+    scene/tictactoe.h
+    scene/tictactoe.cpp
 )
 
 # Link everything together
