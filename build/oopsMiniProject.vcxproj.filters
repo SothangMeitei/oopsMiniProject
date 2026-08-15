@@ -10,7 +10,7 @@
     <ClCompile Include="C:\oopsMiniProject\scene\gamePlay.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\oopsMiniProject\scene\meny.cpp">
+    <ClCompile Include="C:\oopsMiniProject\scene\menu.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

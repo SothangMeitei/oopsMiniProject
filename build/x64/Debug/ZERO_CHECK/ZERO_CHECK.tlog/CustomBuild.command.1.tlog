@@ -1,0 +1,10 @@
+^C:\OOPSMINIPROJECT\BUILD\CMAKEFILES\0AA8C63021A8215EDCD2BFD36C9F9E39\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/oopsMiniProject -BC:/oopsMiniProject/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/oopsMiniProject/build/oopsMiniProject.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

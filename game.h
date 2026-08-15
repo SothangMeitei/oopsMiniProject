@@ -1,14 +1,12 @@
-/*
-    container class for the scenes
-*/
-
 #include <SFML/Graphics.hpp>
 #include "imgui.h"
 #include "imgui-sfml.h"
 #include <memory>
+#include <optional> // Required for SFML 3 events
+
+#include "scene/scene.h"
 #include "scene/gamePlay.h"
 #include "scene/menu.h"
-#include "scene/scene.h"
 
 class GameApp {
 private:
@@ -17,10 +15,13 @@ private:
     std::unique_ptr<Scene> currentScene;
 
 public:
-    GameApp() : window(sf::VideoMode(1280, 720), "OOP Game") {
-        ImGui::SFML::Init(window);
-        // Initialize your starting scene
-        currentScene = std::make_unique<MainMenuScene>(this); 
+    GameApp() : window(sf::VideoMode({1280, 720}), "OOP Game") {
+        window.setFramerateLimit(60);
+        (void)ImGui::SFML::Init(window);
+        
+        // Ensure MainMenuScene is fully defined in scene/menu.h 
+        // and publicly inherits from Scene
+        currentScene = std::make_unique<MainMenuScene>(this);
     }
 
     ~GameApp() {
@@ -33,14 +34,20 @@ public:
 
     void run() {
         while (window.isOpen()) {
-            sf::Event event;
-            while (window.pollEvent(event)) {
-                ImGui::SFML::ProcessEvent(event);
-                if (event.type == sf::Event::Closed)
-                    window.close();
+            // SFML 3: pollEvent returns std::optional
+            while (const std::optional event = window.pollEvent()) {
                 
-                if (currentScene)
-                    currentScene->handleEvent(event, window);
+                // Dereference the optional to pass the actual event
+                ImGui::SFML::ProcessEvent(window, *event);
+                
+                // Type-safe checking replacing the old enum
+                if (event->is<sf::Event::Closed>()) {
+                    window.close();
+                }
+                
+                if (currentScene) {
+                    currentScene->handleEvent(*event, window);
+                }
             }
 
             sf::Time dt = deltaClock.restart();
@@ -50,7 +57,8 @@ public:
                 currentScene->update(dt.asSeconds());
             }
 
-            window.clear();
+            // SFML 3 uses Color::Black instead of Color::Black() or similar macros
+            window.clear(sf::Color::Black);
             
             // 1. Render SFML game objects
             if (currentScene) {
@@ -61,8 +69,8 @@ public:
             if (currentScene) {
                 currentScene->renderUI(); 
             }
+            
             ImGui::SFML::Render(window);
-
             window.display();
         }
     }

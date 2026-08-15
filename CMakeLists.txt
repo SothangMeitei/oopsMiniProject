@@ -10,7 +10,7 @@ add_executable(${PROJECT_NAME}
     main.cpp 
     game.cpp
     scene/gamePlay.cpp
-    scene/meny.cpp
+    scene/menu.cpp
     scene/scene.h
 )
 

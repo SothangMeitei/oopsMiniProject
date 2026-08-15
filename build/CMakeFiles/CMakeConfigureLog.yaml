@@ -140,7 +140,7 @@ events:
       The output was:
       0
       MSBuild version 17.14.23+b0019275e for .NET Framework
-      Build started 8/15/2026 4:42:20 PM.
+      Build started 8/15/2026 5:00:16 PM.
       
       Project "C:\\oopsMiniProject\\build\\CMakeFiles\\4.1.1\\CompilerIdC\\CompilerIdC.vcxproj" on node 1 (default targets).
       PrepareForBuild:
@@ -174,7 +174,7 @@ events:
           0 Warning(s)
           0 Error(s)
       
-      Time Elapsed 00:00:00.75
+      Time Elapsed 00:00:00.71
       
       
       Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.exe"
@@ -2898,7 +2898,7 @@ events:
       The output was:
       0
       MSBuild version 17.14.23+b0019275e for .NET Framework
-      Build started 8/15/2026 4:42:21 PM.
+      Build started 8/15/2026 5:00:17 PM.
       
       Project "C:\\oopsMiniProject\\build\\CMakeFiles\\4.1.1\\CompilerIdCXX\\CompilerIdCXX.vcxproj" on node 1 (default targets).
       PrepareForBuild:
@@ -4295,8 +4295,8 @@ events:
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "C:/oopsMiniProject/build/CMakeFiles/CMakeScratch/TryCompile-88vlk3"
-      binary: "C:/oopsMiniProject/build/CMakeFiles/CMakeScratch/TryCompile-88vlk3"
+      source: "C:/oopsMiniProject/build/CMakeFiles/CMakeScratch/TryCompile-9foajz"
+      binary: "C:/oopsMiniProject/build/CMakeFiles/CMakeScratch/TryCompile-9foajz"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
       CMAKE_C_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
@@ -4309,40 +4309,40 @@ events:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/oopsMiniProject/build/CMakeFiles/CMakeScratch/TryCompile-88vlk3'
+        Change Dir: 'C:/oopsMiniProject/build/CMakeFiles/CMakeScratch/TryCompile-9foajz'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_aac03.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_e06df.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
         MSBuild version 17.14.23+b0019275e for .NET Framework
-        Build started 8/15/2026 4:42:22 PM.
+        Build started 8/15/2026 5:00:18 PM.
         
-        Project "C:\\oopsMiniProject\\build\\CMakeFiles\\CMakeScratch\\TryCompile-88vlk3\\cmTC_aac03.vcxproj" on node 1 (default targets).
+        Project "C:\\oopsMiniProject\\build\\CMakeFiles\\CMakeScratch\\TryCompile-9foajz\\cmTC_e06df.vcxproj" on node 1 (default targets).
         PrepareForBuild:
-          Creating directory "cmTC_aac03.dir\\Debug\\".
+          Creating directory "cmTC_e06df.dir\\Debug\\".
           Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
-          Creating directory "C:\\oopsMiniProject\\build\\CMakeFiles\\CMakeScratch\\TryCompile-88vlk3\\Debug\\".
-          Creating directory "cmTC_aac03.dir\\Debug\\cmTC_aac03.tlog\\".
+          Creating directory "C:\\oopsMiniProject\\build\\CMakeFiles\\CMakeScratch\\TryCompile-9foajz\\Debug\\".
+          Creating directory "cmTC_e06df.dir\\Debug\\cmTC_e06df.tlog\\".
         InitializeBuildStatus:
-          Creating "cmTC_aac03.dir\\Debug\\cmTC_aac03.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
-          Touching "cmTC_aac03.dir\\Debug\\cmTC_aac03.tlog\\unsuccessfulbuild".
+          Creating "cmTC_e06df.dir\\Debug\\cmTC_e06df.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_e06df.dir\\Debug\\cmTC_e06df.tlog\\unsuccessfulbuild".
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Fo"cmTC_aac03.dir\\Debug\\\\" /Fd"cmTC_aac03.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.1\\Modules\\CMakeCCompilerABI.c"
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Fo"cmTC_e06df.dir\\Debug\\\\" /Fd"cmTC_e06df.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.1\\Modules\\CMakeCCompilerABI.c"
           Microsoft (R) C/C++ Optimizing Compiler Version 19.44.35216 for x64
           Copyright (C) Microsoft Corporation.  All rights reserved.
-          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Fo"cmTC_aac03.dir\\Debug\\\\" /Fd"cmTC_aac03.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.1\\Modules\\CMakeCCompilerABI.c"
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Fo"cmTC_e06df.dir\\Debug\\\\" /Fd"cmTC_e06df.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.1\\Modules\\CMakeCCompilerABI.c"
           CMakeCCompilerABI.c
         Link:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /OUT:"C:\\oopsMiniProject\\build\\CMakeFiles\\CMakeScratch\\TryCompile-88vlk3\\Debug\\cmTC_aac03.exe" /INCREMENTAL /ILK:"cmTC_aac03.dir\\Debug\\cmTC_aac03.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/oopsMiniProject/build/CMakeFiles/CMakeScratch/TryCompile-88vlk3/Debug/cmTC_aac03.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"C:/oopsMiniProject/build/CMakeFiles/CMakeScratch/TryCompile-88vlk3/Debug/cmTC_aac03.lib" /MACHINE:X64  /machine:x64 cmTC_aac03.dir\\Debug\\CMakeCCompilerABI.obj
-          cmTC_aac03.vcxproj -> C:\\oopsMiniProject\\build\\CMakeFiles\\CMakeScratch\\TryCompile-88vlk3\\Debug\\cmTC_aac03.exe
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /OUT:"C:\\oopsMiniProject\\build\\CMakeFiles\\CMakeScratch\\TryCompile-9foajz\\Debug\\cmTC_e06df.exe" /INCREMENTAL /ILK:"cmTC_e06df.dir\\Debug\\cmTC_e06df.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/oopsMiniProject/build/CMakeFiles/CMakeScratch/TryCompile-9foajz/Debug/cmTC_e06df.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"C:/oopsMiniProject/build/CMakeFiles/CMakeScratch/TryCompile-9foajz/Debug/cmTC_e06df.lib" /MACHINE:X64  /machine:x64 cmTC_e06df.dir\\Debug\\CMakeCCompilerABI.obj
+          cmTC_e06df.vcxproj -> C:\\oopsMiniProject\\build\\CMakeFiles\\CMakeScratch\\TryCompile-9foajz\\Debug\\cmTC_e06df.exe
         FinalizeBuildStatus:
-          Deleting file "cmTC_aac03.dir\\Debug\\cmTC_aac03.tlog\\unsuccessfulbuild".
-          Touching "cmTC_aac03.dir\\Debug\\cmTC_aac03.tlog\\cmTC_aac03.lastbuildstate".
-        Done Building Project "C:\\oopsMiniProject\\build\\CMakeFiles\\CMakeScratch\\TryCompile-88vlk3\\cmTC_aac03.vcxproj" (default targets).
+          Deleting file "cmTC_e06df.dir\\Debug\\cmTC_e06df.tlog\\unsuccessfulbuild".
+          Touching "cmTC_e06df.dir\\Debug\\cmTC_e06df.tlog\\cmTC_e06df.lastbuildstate".
+        Done Building Project "C:\\oopsMiniProject\\build\\CMakeFiles\\CMakeScratch\\TryCompile-9foajz\\cmTC_e06df.vcxproj" (default targets).
         
         Build succeeded.
             0 Warning(s)
             0 Error(s)
         
-        Time Elapsed 00:00:00.59
+        Time Elapsed 00:00:00.53
         
       exitCode: 0
   -
@@ -4382,8 +4382,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "C:/oopsMiniProject/build/CMakeFiles/CMakeScratch/TryCompile-1pm3lb"
-      binary: "C:/oopsMiniProject/build/CMakeFiles/CMakeScratch/TryCompile-1pm3lb"
+      source: "C:/oopsMiniProject/build/CMakeFiles/CMakeScratch/TryCompile-bs3n4s"
+      binary: "C:/oopsMiniProject/build/CMakeFiles/CMakeScratch/TryCompile-bs3n4s"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /GR /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
@@ -4397,40 +4397,40 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/oopsMiniProject/build/CMakeFiles/CMakeScratch/TryCompile-1pm3lb'
+        Change Dir: 'C:/oopsMiniProject/build/CMakeFiles/CMakeScratch/TryCompile-bs3n4s'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_4561b.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_65ff7.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
         MSBuild version 17.14.23+b0019275e for .NET Framework
-        Build started 8/15/2026 4:42:23 PM.
+        Build started 8/15/2026 5:00:19 PM.
         
-        Project "C:\\oopsMiniProject\\build\\CMakeFiles\\CMakeScratch\\TryCompile-1pm3lb\\cmTC_4561b.vcxproj" on node 1 (default targets).
+        Project "C:\\oopsMiniProject\\build\\CMakeFiles\\CMakeScratch\\TryCompile-bs3n4s\\cmTC_65ff7.vcxproj" on node 1 (default targets).
         PrepareForBuild:
-          Creating directory "cmTC_4561b.dir\\Debug\\".
+          Creating directory "cmTC_65ff7.dir\\Debug\\".
           Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
-          Creating directory "C:\\oopsMiniProject\\build\\CMakeFiles\\CMakeScratch\\TryCompile-1pm3lb\\Debug\\".
-          Creating directory "cmTC_4561b.dir\\Debug\\cmTC_4561b.tlog\\".
+          Creating directory "C:\\oopsMiniProject\\build\\CMakeFiles\\CMakeScratch\\TryCompile-bs3n4s\\Debug\\".
+          Creating directory "cmTC_65ff7.dir\\Debug\\cmTC_65ff7.tlog\\".
         InitializeBuildStatus:
-          Creating "cmTC_4561b.dir\\Debug\\cmTC_4561b.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
-          Touching "cmTC_4561b.dir\\Debug\\cmTC_4561b.tlog\\unsuccessfulbuild".
+          Creating "cmTC_65ff7.dir\\Debug\\cmTC_65ff7.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_65ff7.dir\\Debug\\cmTC_65ff7.tlog\\unsuccessfulbuild".
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /GR /Fo"cmTC_4561b.dir\\Debug\\\\" /Fd"cmTC_4561b.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.1\\Modules\\CMakeCXXCompilerABI.cpp"
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /GR /Fo"cmTC_65ff7.dir\\Debug\\\\" /Fd"cmTC_65ff7.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.1\\Modules\\CMakeCXXCompilerABI.cpp"
           Microsoft (R) C/C++ Optimizing Compiler Version 19.44.35216 for x64
           Copyright (C) Microsoft Corporation.  All rights reserved.
-          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /GR /Fo"cmTC_4561b.dir\\Debug\\\\" /Fd"cmTC_4561b.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.1\\Modules\\CMakeCXXCompilerABI.cpp"
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /GR /Fo"cmTC_65ff7.dir\\Debug\\\\" /Fd"cmTC_65ff7.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.1\\Modules\\CMakeCXXCompilerABI.cpp"
           CMakeCXXCompilerABI.cpp
         Link:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /OUT:"C:\\oopsMiniProject\\build\\CMakeFiles\\CMakeScratch\\TryCompile-1pm3lb\\Debug\\cmTC_4561b.exe" /INCREMENTAL /ILK:"cmTC_4561b.dir\\Debug\\cmTC_4561b.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/oopsMiniProject/build/CMakeFiles/CMakeScratch/TryCompile-1pm3lb/Debug/cmTC_4561b.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"C:/oopsMiniProject/build/CMakeFiles/CMakeScratch/TryCompile-1pm3lb/Debug/cmTC_4561b.lib" /MACHINE:X64  /machine:x64 cmTC_4561b.dir\\Debug\\CMakeCXXCompilerABI.obj
-          cmTC_4561b.vcxproj -> C:\\oopsMiniProject\\build\\CMakeFiles\\CMakeScratch\\TryCompile-1pm3lb\\Debug\\cmTC_4561b.exe
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /OUT:"C:\\oopsMiniProject\\build\\CMakeFiles\\CMakeScratch\\TryCompile-bs3n4s\\Debug\\cmTC_65ff7.exe" /INCREMENTAL /ILK:"cmTC_65ff7.dir\\Debug\\cmTC_65ff7.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/oopsMiniProject/build/CMakeFiles/CMakeScratch/TryCompile-bs3n4s/Debug/cmTC_65ff7.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"C:/oopsMiniProject/build/CMakeFiles/CMakeScratch/TryCompile-bs3n4s/Debug/cmTC_65ff7.lib" /MACHINE:X64  /machine:x64 cmTC_65ff7.dir\\Debug\\CMakeCXXCompilerABI.obj
+          cmTC_65ff7.vcxproj -> C:\\oopsMiniProject\\build\\CMakeFiles\\CMakeScratch\\TryCompile-bs3n4s\\Debug\\cmTC_65ff7.exe
         FinalizeBuildStatus:
-          Deleting file "cmTC_4561b.dir\\Debug\\cmTC_4561b.tlog\\unsuccessfulbuild".
-          Touching "cmTC_4561b.dir\\Debug\\cmTC_4561b.tlog\\cmTC_4561b.lastbuildstate".
-        Done Building Project "C:\\oopsMiniProject\\build\\CMakeFiles\\CMakeScratch\\TryCompile-1pm3lb\\cmTC_4561b.vcxproj" (default targets).
+          Deleting file "cmTC_65ff7.dir\\Debug\\cmTC_65ff7.tlog\\unsuccessfulbuild".
+          Touching "cmTC_65ff7.dir\\Debug\\cmTC_65ff7.tlog\\cmTC_65ff7.lastbuildstate".
+        Done Building Project "C:\\oopsMiniProject\\build\\CMakeFiles\\CMakeScratch\\TryCompile-bs3n4s\\cmTC_65ff7.vcxproj" (default targets).
         
         Build succeeded.
             0 Warning(s)
             0 Error(s)
         
-        Time Elapsed 00:00:00.57
+        Time Elapsed 00:00:00.47
         
       exitCode: 0
   -
