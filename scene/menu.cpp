@@ -16,9 +16,13 @@ void MainMenuScene::renderUI() {
 
     sf::Vector2u winSize = app->getWindow().getSize();
 
-    ImGui::SetNextWindowPos(ImVec2(winSize.x / 2.0f, winSize.y / 2.0f),ImGuiCond_Always, ImVec2(0.5f, 0.5f));
+    ImGui::SetNextWindowPos(ImVec2(winSize.x / 2.0f, winSize.y / 2.0f)
+                            ,ImGuiCond_Always, ImVec2(0.5f, 0.5f));
 
-    ImGui::Begin("Arcade Selection", nullptr, ImGuiWindowFlags_AlwaysAutoResize | ImGuiWindowFlags_NoCollapse);
+    ImGui::Begin("Arcade Selection"
+        , nullptr
+        , ImGuiWindowFlags_AlwaysAutoResize 
+        | ImGuiWindowFlags_NoCollapse);
     
     ImGui::Text("Select a game to play:");
     ImGui::Separator();

@@ -104,7 +104,7 @@ void PongScene::render(sf::RenderWindow& window) {
     window.draw(ball);
 }
 void PongScene::renderUI() {
-    // Navigation HUD in the top left
+    // --- HUD Window ---
     ImGui::SetNextWindowPos(ImVec2(10, 10));
     ImGui::Begin("Game HUD", nullptr, ImGuiWindowFlags_NoDecoration | ImGuiWindowFlags_AlwaysAutoResize | ImGuiWindowFlags_NoBackground);
     if (ImGui::Button("<- Return to Menu")) {
@@ -112,11 +112,21 @@ void PongScene::renderUI() {
     }
     ImGui::End();
     
-    // Scoreboard in the top middle
+    // --- Scoreboard Window ---
     ImGui::SetNextWindowPos(ImVec2(winSize.x / 2.0f, 20.0f), ImGuiCond_Always, ImVec2(0.5f, 0.0f));
     ImGui::Begin("Scoreboard", nullptr, ImGuiWindowFlags_NoDecoration | ImGuiWindowFlags_AlwaysAutoResize | ImGuiWindowFlags_NoBackground);
-    ImGui::SetWindowFontScale(3.0f); // Scale up the default font size
+    
+    // THE BLURRY FIX: Safely retrieve the 72px font we loaded into Index 1
+    ImGuiIO& io = ImGui::GetIO();
+    ImFont* scoreFont = io.Fonts->Fonts.Size > 1 ? io.Fonts->Fonts[1] : io.Fonts->Fonts[0];
+    
+    // Push the crisp, large font onto the stack
+    ImGui::PushFont(scoreFont);
+    
     ImGui::Text("%d  -  %d", leftScore, rightScore);
-    ImGui::SetWindowFontScale(1.0f); // Reset scale for other windows
+    
+    // Always pop the font when you are done so it doesn't affect other windows!
+    ImGui::PopFont(); 
+    
     ImGui::End();
 }
